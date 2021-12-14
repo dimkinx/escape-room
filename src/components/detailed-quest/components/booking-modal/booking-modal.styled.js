@@ -124,7 +124,7 @@ const BookingSubmit = styled(Button)`
   padding-bottom: 16px;
   padding-left: 34px;
 
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({ theme }) => theme.font.semiBase};
   line-height: 16px;
   letter-spacing: 0.03em;
   background-color: ${({ theme }) => theme.color.pinkSwan};
@@ -201,7 +201,7 @@ const BookingCheckboxInput = styled.input.attrs({
 `;
 
 const BookingCheckboxText = styled.span`
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({ theme }) => theme.font.semiBase};
   line-height: 144%;
   color: ${({ theme }) => theme.color.whisper2};
 `;

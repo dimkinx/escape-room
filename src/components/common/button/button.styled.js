@@ -12,7 +12,7 @@ const Button = styled.button`
   padding-left: 48px;
 
   font-family: inherit;
-  font-size: ${({ theme }) => theme.font.upperbase};
+  font-size: ${({ theme }) => theme.font.upperBase};
   line-height: 20px;
   letter-spacing: 0.03em;
   font-weight: 800;

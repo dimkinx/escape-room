@@ -47,7 +47,7 @@ const ContactsList = styled.dl`
 const ContactTitle = styled.dt`
   margin-bottom: 5px;
 
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({ theme }) => theme.font.semiBase};
   line-height: 140%;
   font-weight: 700;
   letter-spacing: -0.02em;

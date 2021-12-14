@@ -2,13 +2,14 @@ const appTheme = {
   font: {
     mini: '12px',
     small: '13px',
-    semibase: '14px',
+    semiBase: '14px',
     base: '15px',
-    upperbase: '17px',
+    upperBase: '17px',
     medium: '24px',
     formsHeading: '32px',
-    semilarge: '64px',
+    semiLarge: '64px',
     large: '92px',
+    megaLarge: '160px',
   },
   color: {
     white: '#FFFFFF',

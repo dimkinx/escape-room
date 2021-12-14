@@ -67,7 +67,7 @@ const LinkItem = styled.li`
 const Link = styled(RouterLink)`
   display: block;
   max-width: 100px;
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({ theme }) => theme.font.semiBase};
   line-height: 16px;
   letter-spacing: 0.03em;
   font-weight: 600;
@@ -90,7 +90,7 @@ const Link = styled(RouterLink)`
 const Phone = styled.a`
   margin-top: 17px;
   margin-left: auto;
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({ theme }) => theme.font.semiBase};
   line-height: 16px;
   letter-spacing: 0.03em;
   font-weight: 600;

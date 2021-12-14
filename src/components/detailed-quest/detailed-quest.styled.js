@@ -49,7 +49,7 @@ const PageSubtitle = styled.p`
   padding: 0;
   padding-left: 7px;
 
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({ theme }) => theme.font.semiBase};
   line-height: 144%;
   color: ${({ theme }) => theme.color.tangerine};
 `;
@@ -91,7 +91,7 @@ const FeaturesItem = styled.li`
 const FeatureTitle = styled.span`
   margin-left: 9px;
 
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({ theme }) => theme.font.semiBase};
   line-height: 144%;
   font-weight: 400;
   color: ${({ theme }) => theme.color.whisper2};

@@ -42,7 +42,7 @@ const TabBtn = styled.button.attrs({ type: 'button' })`
   padding: 0;
 
   font-family: inherit;
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({ theme }) => theme.font.semiBase};
   line-height: 140%;
   letter-spacing: -0.02em;
   font-weight: 700;
