@@ -25,6 +25,8 @@ const appTheme = {
     carrotOrange: '#F39425',
     eclipse: 'rgba(61, 51, 51, 0.96)',
     pinkSwan: '#B8B8B8',
+    blue: '#0033FF',
+    red: '#FF0000',
   },
 };
 
