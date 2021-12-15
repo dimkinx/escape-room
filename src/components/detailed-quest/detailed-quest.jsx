@@ -9,7 +9,7 @@ import { BookingModal } from './components/components';
 const DetailedQuest = () => {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
-  const onBookingBtnClick = () => {
+  const handleBookingBtnClick = () => {
     setIsBookingModalOpened(true);
   };
 
@@ -53,13 +53,17 @@ const DetailedQuest = () => {
               помочь другим, разобраться что произошло и выбраться из комнаты?
             </S.QuestDescription>
 
-            <S.QuestBookingBtn onClick={onBookingBtnClick}>
+            <S.QuestBookingBtn
+              onClick={handleBookingBtnClick}
+            >
               Забронировать
             </S.QuestBookingBtn>
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal />}
+        {isBookingModalOpened && <BookingModal
+          onModalCloseBtnClick={setIsBookingModalOpened}
+        />}
       </S.Main>
     </MainLayout>
   );

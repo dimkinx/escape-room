@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from 'components/common/common';
+import PhoneInput from 'react-phone-number-input/input';
 import IconTick from 'assets/img/icon-tick.svg';
 
 const BlockLayer = styled.div`
@@ -113,6 +114,40 @@ const BookingInput = styled.input`
   &:hover {
     opacity: 0.8;
   }
+
+  &:focus:invalid {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-color: ${({ theme }) => theme.color.red};
+  }
+`;
+
+const BookingPhoneInput = styled(PhoneInput)`
+  padding-top: 17px;
+  padding-right: 24px;
+  padding-bottom: 18px;
+  padding-left: 23px;
+
+  font-family: inherit;
+
+  color: ${({ theme }) => theme.color.white};
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.color.whisper};
+    opacity: 0.64;
+  }
+
+  &:focus,
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus:invalid {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-color: ${({ theme }) => theme.color.red};
+  }
 `;
 
 const BookingSubmit = styled(Button)`
@@ -210,6 +245,10 @@ const BookingLegalLink = styled.a`
   text-decoration: underline;
 `;
 
+const BookingErrorText = styled.span`
+  color: ${({ theme }) => theme.color.red};
+`;
+
 export {
   BlockLayer,
   Modal,
@@ -220,10 +259,12 @@ export {
   BookingField,
   BookingLabel,
   BookingInput,
+  BookingPhoneInput,
   BookingSubmit,
   BookingCheckboxWrapper,
   BookingCheckboxLabel,
   BookingCheckboxInput,
   BookingCheckboxText,
   BookingLegalLink,
+  BookingErrorText,
 };
