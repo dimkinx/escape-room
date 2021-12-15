@@ -3,6 +3,9 @@ import { appTheme as theme } from './components/app/common';
 const AppRoute = {
   Home: '/',
   DetailedQuest: '/quest',
+  Beginners: '/beginners',
+  Reviews: '/reviews',
+  Stock: '/stock',
   Contacts: '/contacts',
 };
 

@@ -6,6 +6,7 @@ import {
 } from 'components/common/common';
 import Home from 'components/home/home';
 import DetailedQuest from 'components/detailed-quest/detailed-quest';
+import Underway from '../underway/underway';
 import Contacts from 'components/contacts/contacts';
 import NotFound from '../not-found/not-found';
 import { appTheme } from './common';
@@ -22,6 +23,15 @@ const App = () => (
         </Route>
         <Route exact path={AppRoute.DetailedQuest}>
           <DetailedQuest />
+        </Route>
+        <Route exact path={AppRoute.Beginners}>
+          <Underway />
+        </Route>
+        <Route exact path={AppRoute.Reviews}>
+          <Underway />
+        </Route>
+        <Route exact path={AppRoute.Stock}>
+          <Underway />
         </Route>
         <Route exact path={AppRoute.Contacts}>
           <Contacts />

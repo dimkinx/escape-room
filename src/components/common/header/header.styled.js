@@ -1,5 +1,6 @@
-import styled, { css } from 'styled-components';
-import { Container, Link as RouterLink } from 'components/common/common';
+import styled from 'styled-components';
+import { Container, NavLink as RouterNavLink } from 'components/common/common';
+import { Link as RouterLink } from 'react-router-dom';
 
 const StyledHeader = styled.header`
   z-index: 5;
@@ -23,14 +24,6 @@ const HeaderWrapper = styled(Container)`
   padding-left: 32px;
 `;
 
-const Logo = styled.a`
-  margin-right: 250px;
-
-  @media (max-width: 1300px) {
-    margin-right: auto;
-  }
-`;
-
 const LogoLink = styled(RouterLink)`
   margin-right: 250px;
 
@@ -39,9 +32,9 @@ const LogoLink = styled(RouterLink)`
   }
 `;
 
-const Navigation = styled.nav``;
-
 const Image = styled.img``;
+
+const Navigation = styled.nav``;
 
 const Links = styled.ul`
   display: flex;
@@ -64,7 +57,7 @@ const LinkItem = styled.li`
   }
 `;
 
-const Link = styled(RouterLink)`
+const NavLink = styled(RouterNavLink)`
   display: block;
   max-width: 100px;
   font-size: ${({ theme }) => theme.font.semiBase};
@@ -75,14 +68,9 @@ const Link = styled(RouterLink)`
 
   color: ${({ theme }) => theme.color.whiteSmoke};
 
-  ${({ $isActiveLink }) =>
-    $isActiveLink &&
-    css`
-      color: ${({ theme }) => theme.color.tangerine};
-    `}
-
   &:focus,
-  &:hover {
+  &:hover,
+  &.active {
     color: ${({ theme }) => theme.color.tangerine};
   }
 `;
@@ -107,12 +95,11 @@ const Phone = styled.a`
 export {
   StyledHeader,
   HeaderWrapper,
-  Logo,
   LogoLink,
-  Navigation,
   Image,
+  Navigation,
   Links,
   LinkItem,
-  Link,
+  NavLink,
   Phone,
 };
