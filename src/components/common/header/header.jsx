@@ -1,9 +1,10 @@
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import logo from '../../../assets/img/logo.svg';
 import * as S from './header.styled';
 import { AppRoute } from '../../../constants';
 
-const Header = () => {
+function Header() {
   const location = useLocation();
 
   const handleLogoLinkClick = (evt) => {
@@ -54,6 +55,6 @@ const Header = () => {
       </S.HeaderWrapper>
     </S.StyledHeader>
   );
-};
+}
 
 export default Header;

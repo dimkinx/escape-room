@@ -1,7 +1,13 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import * as S from './page-title.styled';
 
-const PageTitle = ({ children, ...props }) => (
-  <S.PageTitle {...props}>{children}</S.PageTitle>
-);
+function PageTitle({ children, ...props }) {
+  return <S.PageTitle {...props}>{children}</S.PageTitle>;
+}
+
+PageTitle.propTypes = {
+  children: PropTypes.node,
+};
 
 export default PageTitle;

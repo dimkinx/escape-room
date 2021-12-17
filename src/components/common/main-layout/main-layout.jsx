@@ -1,11 +1,19 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Header, Footer } from 'components/common/common';
 
-const MainLayout = ({ children }) => (
-  <>
-    <Header />
-    {children}
-    <Footer />
-  </>
-);
+function MainLayout({ children }) {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
+}
+
+MainLayout.propTypes = {
+  children: PropTypes.node,
+};
 
 export default MainLayout;

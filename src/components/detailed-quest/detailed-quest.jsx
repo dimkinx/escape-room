@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { MainLayout } from 'components/common/common';
+import { BookingModal } from './components/components';
 import { ReactComponent as IconClock } from 'assets/img/icon-clock.svg';
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
-import { BookingModal } from './components/components';
 
-const DetailedQuest = () => {
-  const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
+function DetailedQuest() {
+  const [ isBookingModalOpened, setIsBookingModalOpened ] = useState(false);
 
   const handleBookingBtnClick = () => {
     setIsBookingModalOpened(true);
@@ -61,12 +61,14 @@ const DetailedQuest = () => {
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal
-          onModalCloseBtnClick={setIsBookingModalOpened}
-        />}
+        {isBookingModalOpened && (
+          <BookingModal
+            onModalCloseBtnClick={setIsBookingModalOpened}
+          />
+        )}
       </S.Main>
     </MainLayout>
   );
-};
+}
 
 export default DetailedQuest;

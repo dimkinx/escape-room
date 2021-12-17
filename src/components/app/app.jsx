@@ -1,3 +1,4 @@
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import {
   Switch,
@@ -13,35 +14,37 @@ import { appTheme } from './common';
 import * as S from './app.styled';
 import { AppRoute } from '../../constants';
 
-const App = () => (
-  <ThemeProvider theme={appTheme}>
-    <S.GlobalStyle />
-    <Router>
-      <Switch>
-        <Route exact path={AppRoute.Home}>
-          <Home />
-        </Route>
-        <Route exact path={AppRoute.DetailedQuest}>
-          <DetailedQuest />
-        </Route>
-        <Route exact path={AppRoute.Beginners}>
-          <Underway />
-        </Route>
-        <Route exact path={AppRoute.Reviews}>
-          <Underway />
-        </Route>
-        <Route exact path={AppRoute.Stock}>
-          <Underway />
-        </Route>
-        <Route exact path={AppRoute.Contacts}>
-          <Contacts />
-        </Route>
-        <Route>
-          <NotFound />
-        </Route>
-      </Switch>
-    </Router>
-  </ThemeProvider>
-);
+function App() {
+  return (
+    <ThemeProvider theme={appTheme}>
+      <S.GlobalStyle />
+      <Router>
+        <Switch>
+          <Route exact path={AppRoute.Home}>
+            <Home />
+          </Route>
+          <Route exact path={AppRoute.DetailedQuest}>
+            <DetailedQuest />
+          </Route>
+          <Route exact path={AppRoute.Beginners}>
+            <Underway />
+          </Route>
+          <Route exact path={AppRoute.Reviews}>
+            <Underway />
+          </Route>
+          <Route exact path={AppRoute.Stock}>
+            <Underway />
+          </Route>
+          <Route exact path={AppRoute.Contacts}>
+            <Contacts />
+          </Route>
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
+  );
+}
 
 export default App;
