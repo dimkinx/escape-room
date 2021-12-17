@@ -9,6 +9,11 @@ const AppRoute = {
   Contacts: '/contacts',
 };
 
+const ToastParam = {
+  Theme: 'colored',
+  Position: 'top-center',
+};
+
 const LoaderParam = {
   Type: 'Puff',
   Color: theme.color.tangerine,
@@ -45,9 +50,28 @@ const MapIconParam = {
   },
 };
 
+const RequestStatus = {
+  Unknown: 'UNKNOWN',
+  Loading: 'LOADING',
+  Success: 'SUCCESS',
+  NotFound: 'NOT_FOUND',
+  Fail: 'FAIL',
+};
+
+const ActionType = {
+  SetQuest: 'setQuest',
+  SetQuestRequestStatus: 'setQuestRequestStatus',
+  SetQuests: 'setQuests',
+  SetQuestsRequestStatus: 'setQuestsRequestStatus',
+  SetReviewRequestStatus: 'setReviewRequestStatus',
+};
+
 export {
   AppRoute,
+  ToastParam,
   LoaderParam,
   MapParam,
   MapIconParam,
+  RequestStatus,
+  ActionType,
 };

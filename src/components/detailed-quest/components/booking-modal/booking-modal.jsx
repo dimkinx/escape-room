@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -10,6 +10,7 @@ import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
 const schema = yup.object().shape({
   name: yup
     .string()
+    .trim()
     .required('Введите имя'),
   phone: yup
     .string()
@@ -169,4 +170,4 @@ BookingModal.propTypes = {
   onModalCloseBtnClick: PropTypes.func,
 };
 
-export default BookingModal;
+export default memo(BookingModal);
