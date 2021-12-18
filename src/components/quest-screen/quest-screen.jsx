@@ -4,9 +4,9 @@ import { BookingModal } from './components/components';
 import { ReactComponent as IconClock } from 'assets/img/icon-clock.svg';
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
-import * as S from './detailed-quest.styled';
+import * as S from './quest-screen.styled';
 
-function DetailedQuest() {
+function QuestScreen() {
   const [ isBookingModalOpened, setIsBookingModalOpened ] = useState(false);
 
   const handleBookingBtnClick = () => {
@@ -71,4 +71,4 @@ function DetailedQuest() {
   );
 }
 
-export default DetailedQuest;
+export default QuestScreen;

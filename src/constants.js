@@ -1,12 +1,46 @@
 import { appTheme as theme } from './components/app/common';
 
+const ENDPOINT_URL = 'http://localhost:3001';
+
+const HttpStatusCode = {
+  NotFound: 404,
+};
+
+const RequestStatus = {
+  Unknown: 'UNKNOWN',
+  Loading: 'LOADING',
+  Success: 'SUCCESS',
+  NotFound: 'NOT_FOUND',
+  Fail: 'FAIL',
+};
+
+const APIRoute = {
+  GetQuest: (id) => `${ENDPOINT_URL}/quests/${id}`,
+  GetQuests: () => `${ENDPOINT_URL}/quests`,
+  PostOrder: () => `${ENDPOINT_URL}/orders`,
+};
+
 const AppRoute = {
   Home: '/',
-  DetailedQuest: '/quest',
+  DetailedQuest: '/quest/:id',
   Beginners: '/beginners',
   Reviews: '/reviews',
   Stock: '/stock',
-  Contacts: '/contacts',
+  Contacts: '/contacts-screen',
+};
+
+const ActionType = {
+  SetQuest: 'setQuest',
+  SetQuestRequestStatus: 'setQuestRequestStatus',
+  SetQuests: 'setQuests',
+  SetQuestsRequestStatus: 'setQuestsRequestStatus',
+  SetOrderRequestStatus: 'setReviewRequestStatus',
+};
+
+const ErrorMessage = {
+  FailToLoadQuest: 'Не удалось загрузить квест',
+  FailToLoadQuests: 'Не удалось загрузить квесты',
+  FailToSendOrder: 'Не удалось отправить заказ',
 };
 
 const ToastParam = {
@@ -50,28 +84,15 @@ const MapIconParam = {
   },
 };
 
-const RequestStatus = {
-  Unknown: 'UNKNOWN',
-  Loading: 'LOADING',
-  Success: 'SUCCESS',
-  NotFound: 'NOT_FOUND',
-  Fail: 'FAIL',
-};
-
-const ActionType = {
-  SetQuest: 'setQuest',
-  SetQuestRequestStatus: 'setQuestRequestStatus',
-  SetQuests: 'setQuests',
-  SetQuestsRequestStatus: 'setQuestsRequestStatus',
-  SetReviewRequestStatus: 'setReviewRequestStatus',
-};
-
 export {
+  HttpStatusCode,
+  RequestStatus,
+  APIRoute,
   AppRoute,
+  ActionType,
+  ErrorMessage,
   ToastParam,
   LoaderParam,
   MapParam,
   MapIconParam,
-  RequestStatus,
-  ActionType,
 };

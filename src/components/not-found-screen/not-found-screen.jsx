@@ -1,9 +1,9 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import * as S from './not-found.styled';
+import * as S from './not-found-screen.styled';
 import { AppRoute } from '../../constants';
 
-function NotFound() {
+function NotFoundScreen() {
   const location = useLocation();
 
   return (
@@ -15,4 +15,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default NotFoundScreen;

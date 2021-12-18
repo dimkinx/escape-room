@@ -1,9 +1,9 @@
 import React from 'react';
 import { MainLayout, PageTitle, PageSubtext } from 'components/common/common';
 import { Map } from './components/components';
-import * as S from './contacts.styled';
+import * as S from './contacts-screen.styled';
 
-function Contacts() {
+function ContactsScreen() {
   return (
     <MainLayout>
       <S.Main>
@@ -50,4 +50,4 @@ function Contacts() {
   );
 }
 
-export default Contacts;
+export default ContactsScreen;

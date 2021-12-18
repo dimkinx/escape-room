@@ -1,11 +1,11 @@
 import React from 'react';
 import Loader from 'react-loader-spinner';
-import * as S from './loading.styled';
+import * as S from './loading-screen.styled';
 import { LoaderParam } from '../../constants';
 
 const {Type, Color, Size: {Width, Height}} = LoaderParam;
 
-function Loading() {
+function LoadingScreen() {
   return (
     <S.Main forwardedAs="main">
       <S.PageTitle>Выполняется загрузка...</S.PageTitle>
@@ -19,4 +19,4 @@ function Loading() {
   );
 }
 
-export default Loading;
+export default LoadingScreen;

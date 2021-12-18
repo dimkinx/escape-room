@@ -1,8 +1,8 @@
 import React from 'react';
 import MainLayout from '../common/main-layout/main-layout';
-import * as S from './underway.styled';
+import * as S from './underway-screen.styled';
 
-function Underway() {
+function UnderwayScreen() {
   return (
     <MainLayout>
       <S.Main forwardedAs="main">
@@ -12,4 +12,4 @@ function Underway() {
   );
 }
 
-export default Underway;
+export default UnderwayScreen;

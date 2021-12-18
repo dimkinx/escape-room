@@ -5,11 +5,11 @@ import {
   Route,
   BrowserRouter as Router,
 } from 'components/common/common';
-import Home from 'components/home/home';
-import DetailedQuest from 'components/detailed-quest/detailed-quest';
-import Underway from '../underway/underway';
-import Contacts from 'components/contacts/contacts';
-import NotFound from '../not-found/not-found';
+import HomeScreen from 'components/home-screen/home-screen';
+import QuestScreen from 'components/quest-screen/quest-screen';
+import UnderwayScreen from '../underway-screen/underway-screen';
+import ContactsScreen from 'components/contacts-screen/contacts-screen';
+import NotFoundScreen from '../not-found-screen/not-found-screen';
 import { appTheme } from './common';
 import * as S from './app.styled';
 import { AppRoute } from '../../constants';
@@ -21,25 +21,25 @@ function App() {
       <Router>
         <Switch>
           <Route exact path={AppRoute.Home}>
-            <Home />
+            <HomeScreen />
           </Route>
           <Route exact path={AppRoute.DetailedQuest}>
-            <DetailedQuest />
+            <QuestScreen />
           </Route>
           <Route exact path={AppRoute.Beginners}>
-            <Underway />
+            <UnderwayScreen />
           </Route>
           <Route exact path={AppRoute.Reviews}>
-            <Underway />
+            <UnderwayScreen />
           </Route>
           <Route exact path={AppRoute.Stock}>
-            <Underway />
+            <UnderwayScreen />
           </Route>
           <Route exact path={AppRoute.Contacts}>
-            <Contacts />
+            <ContactsScreen />
           </Route>
           <Route>
-            <NotFound />
+            <NotFoundScreen />
           </Route>
         </Switch>
       </Router>

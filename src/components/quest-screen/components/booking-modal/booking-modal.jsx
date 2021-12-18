@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -170,4 +170,4 @@ BookingModal.propTypes = {
   onModalCloseBtnClick: PropTypes.func,
 };
 
-export default memo(BookingModal);
+export default BookingModal;
