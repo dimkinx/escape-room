@@ -1,11 +1,11 @@
 import { setOrderRequestStatus, setQuest, setQuestRequestStatus, setQuests, setQuestsRequestStatus } from './actions';
-import { APIRoute, ErrorMessage, HttpStatusCode, RequestStatus } from '../constants';
+import { Endpoint, ErrorMessage, HttpStatusCode, RequestStatus } from '../constants';
 import { toast } from 'react-toastify';
 
 const getQuestAction = (id) => (
   async (dispatch)  => {
     dispatch(setQuestRequestStatus(RequestStatus.Loading));
-    await fetch(APIRoute.GetQuest(id))
+    await fetch(Endpoint.GetQuest(id))
       .then((response) => response.json())
       .then((data) => {
         dispatch(setQuest(data));
@@ -25,7 +25,7 @@ const getQuestAction = (id) => (
 const getQuestsAction = () => (
   async (dispatch)  => {
     dispatch(setQuestsRequestStatus(RequestStatus.Loading));
-    await fetch(APIRoute.GetQuests())
+    await fetch(Endpoint.GetQuests())
       .then((response) => response.json())
       .then((data) => {
         dispatch(setQuests(data));
@@ -41,7 +41,7 @@ const getQuestsAction = () => (
 const postOrderAction = (order) => (
   async (dispatch)  => {
     dispatch(setOrderRequestStatus(RequestStatus.Loading));
-    await fetch(APIRoute.PostOrder(), {
+    await fetch(Endpoint.PostOrder(), {
       method: 'POST',
       body: JSON.stringify(order),
     })

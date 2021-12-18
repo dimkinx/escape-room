@@ -1,11 +1,11 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { RequestStatus } from '../constants';
+import { RequestStatus, TabsType } from '../constants';
 import {
   setQuest,
   setQuestRequestStatus,
   setQuests,
   setQuestsRequestStatus,
-  setOrderRequestStatus,
+  setOrderRequestStatus, setQuestsType,
 } from './actions';
 
 const initialState = {
@@ -16,6 +16,7 @@ const initialState = {
   quests: {
     data: [],
     status: RequestStatus.Unknown,
+    type: TabsType.All.Type,
   },
   order: {
     status: RequestStatus.Unknown,
@@ -35,6 +36,9 @@ const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(setQuestsRequestStatus, (state, action) => {
       state.quests.status = action.payload.status;
+    })
+    .addCase(setQuestsType, (state, action) => {
+      state.quests.type = action.payload.type;
     })
     .addCase(setOrderRequestStatus, (state, action) => {
       state.order.status = action.payload.status;

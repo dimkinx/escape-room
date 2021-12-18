@@ -37,6 +37,15 @@ const setQuestsRequestStatus = createAction(
   }),
 );
 
+const setQuestsType = createAction(
+  ActionType.SetQuestsType,
+  (type) => ({
+    payload: {
+      type,
+    },
+  }),
+);
+
 const setOrderRequestStatus = createAction(
   ActionType.SetOrderRequestStatus,
   (status) => ({
@@ -51,5 +60,6 @@ export {
   setQuestRequestStatus,
   setQuests,
   setQuestsRequestStatus,
+  setQuestsType,
   setOrderRequestStatus,
 };

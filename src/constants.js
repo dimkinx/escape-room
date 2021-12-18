@@ -1,6 +1,12 @@
 import { appTheme as theme } from './components/app/common';
 
-const ENDPOINT_URL = 'http://localhost:3001';
+const ENDPOINT_BASE_URL = 'http://localhost:3001';
+
+const Endpoint = {
+  GetQuest: (id) => `${ENDPOINT_BASE_URL}/quests/${id}`,
+  GetQuests: () => `${ENDPOINT_BASE_URL}/quests`,
+  PostOrder: () => `${ENDPOINT_BASE_URL}/orders`,
+};
 
 const HttpStatusCode = {
   NotFound: 404,
@@ -14,15 +20,10 @@ const RequestStatus = {
   Fail: 'FAIL',
 };
 
-const APIRoute = {
-  GetQuest: (id) => `${ENDPOINT_URL}/quests/${id}`,
-  GetQuests: () => `${ENDPOINT_URL}/quests`,
-  PostOrder: () => `${ENDPOINT_URL}/orders`,
-};
-
 const AppRoute = {
   Home: '/',
   DetailedQuest: '/quest/:id',
+  Quest: '/quest/',
   Beginners: '/beginners',
   Reviews: '/reviews',
   Stock: '/stock',
@@ -34,6 +35,7 @@ const ActionType = {
   SetQuestRequestStatus: 'setQuestRequestStatus',
   SetQuests: 'setQuests',
   SetQuestsRequestStatus: 'setQuestsRequestStatus',
+  SetQuestsType: 'setQuestsType',
   SetOrderRequestStatus: 'setReviewRequestStatus',
 };
 
@@ -84,10 +86,67 @@ const MapIconParam = {
   },
 };
 
+const TabsType = {
+  All: {
+    Title: 'Все квесты',
+    Type: 'all-quests',
+    IconSize: {
+      Width: '26',
+      Height: '30',
+    },
+  },
+  Adventures: {
+    Title: 'Приключения',
+    Type: 'adventures',
+    IconSize: {
+      Width: '36',
+      Height: '30',
+    },
+  },
+  Horror: {
+    Title: 'Ужасы',
+    Type: 'horror',
+    IconSize: {
+      Width: '30',
+      Height: '30',
+    },
+  },
+  Mystic: {
+    Title: 'Мистика',
+    Type: 'mystic',
+    IconSize: {
+      Width: '30',
+      Height: '30',
+    },
+  },
+  Detective: {
+    Title: 'Детектив',
+    Type: 'detective',
+    IconSize: {
+      Width: '40',
+      Height: '30',
+    },
+  },
+  SciFi: {
+    Title: 'Sci-fi',
+    Type: 'sci-fi',
+    IconSize: {
+      Width: '28',
+      Height: '30',
+    },
+  },
+};
+
+const LevelType = {
+  Hard: 'сложный',
+  Medium: 'средний',
+  Easy: 'легкий',
+};
+
 export {
+  Endpoint,
   HttpStatusCode,
   RequestStatus,
-  APIRoute,
   AppRoute,
   ActionType,
   ErrorMessage,
@@ -95,4 +154,6 @@ export {
   LoaderParam,
   MapParam,
   MapIconParam,
+  TabsType,
+  LevelType,
 };
