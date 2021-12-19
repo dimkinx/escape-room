@@ -9,7 +9,7 @@ const Endpoint = {
 };
 
 const HttpStatusCode = {
-  NotFound: 404,
+  NotFound: '404',
 };
 
 const RequestStatus = {
@@ -36,13 +36,17 @@ const ActionType = {
   SetQuests: 'setQuests',
   SetQuestsRequestStatus: 'setQuestsRequestStatus',
   SetQuestsType: 'setQuestsType',
-  SetOrderRequestStatus: 'setReviewRequestStatus',
+  SetOrderRequestStatus: 'setOrderRequestStatus',
+};
+
+const SuccessMessage = {
+  SuccessToSendOrder: 'Ваша заявка отправлена!',
 };
 
 const ErrorMessage = {
   FailToLoadQuest: 'Не удалось загрузить квест',
   FailToLoadQuests: 'Не удалось загрузить квесты',
-  FailToSendOrder: 'Не удалось отправить заказ',
+  FailToSendOrder: 'Не удалось отправить заявку',
 };
 
 const ToastParam = {
@@ -149,6 +153,7 @@ export {
   RequestStatus,
   AppRoute,
   ActionType,
+  SuccessMessage,
   ErrorMessage,
   ToastParam,
   LoaderParam,

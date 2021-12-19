@@ -1,11 +1,17 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { postOrderAction } from '../../../../store/api-actions';
+import { getOrderRequestStatus } from '../../../../store/selectors';
+import { setOrderRequestStatus } from '../../../../store/actions';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
 import PropTypes from 'prop-types';
 import * as S from './booking-modal.styled';
-import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
+import { normalizePhoneNumber } from '../../../../utils';
+import { RequestStatus } from '../../../../constants';
 
 const schema = yup.object().shape({
   name: yup
@@ -35,6 +41,7 @@ const schema = yup.object().shape({
 }).required();
 
 function BookingModal({ onModalCloseBtnClick }) {
+  const orderRequestStatus = useSelector(getOrderRequestStatus);
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const { register, formState: { errors }, handleSubmit } = useForm({
@@ -42,9 +49,10 @@ function BookingModal({ onModalCloseBtnClick }) {
     resolver: yupResolver(schema),
   });
 
+  const dispatch = useDispatch();
+
   const handleDataFetch = (data) => {
-    // eslint-disable-next-line no-console
-    console.log({ ...data, phone: phoneNumber.replace(/\D/g, '').slice(-10) });
+    dispatch(postOrderAction({ ...data, phone: normalizePhoneNumber(phoneNumber) }));
   };
 
   const handleOnlyNumberKeyPress = (evt) => {
@@ -67,6 +75,14 @@ function BookingModal({ onModalCloseBtnClick }) {
       document.removeEventListener('keydown', handleEscKeydown);
     };
   }, [handleEscKeydown]);
+
+  useEffect(() => {
+    if (orderRequestStatus === RequestStatus.Success) {
+      dispatch(setOrderRequestStatus(RequestStatus.Unknown));
+      document.removeEventListener('keydown', handleEscKeydown);
+      onModalCloseBtnClick(false);
+    }
+  }, [dispatch, handleEscKeydown, onModalCloseBtnClick, orderRequestStatus]);
 
   return (
     <S.BlockLayer>

@@ -8,7 +8,10 @@ const transformListToText = (list) => list
   .sort()
   .join('-');
 
+const normalizePhoneNumber = (number) => number.replace(/\D/g, '').slice(-10);
+
 export {
   applyCamelCase,
   transformListToText,
+  normalizePhoneNumber,
 };

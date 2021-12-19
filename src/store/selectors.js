@@ -6,6 +6,7 @@ const getQuestRequestStatus = (state) => state.quest.status;
 const getQuests = (state) => state.quests.data;
 const getQuestsRequestStatus = (state) => state.quests.status;
 const getQuestsType = (state) => state.quests.type;
+const getOrderRequestStatus = (state) => state.order.status;
 
 const getQuestsByType = createSelector(
   [getQuests, getQuestsType],
@@ -24,5 +25,6 @@ export {
   getQuests,
   getQuestsRequestStatus,
   getQuestsType,
+  getOrderRequestStatus,
   getQuestsByType,
 };
