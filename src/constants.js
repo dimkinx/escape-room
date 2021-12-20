@@ -22,12 +22,12 @@ const RequestStatus = {
 
 const AppRoute = {
   Home: '/',
-  DetailedQuest: '/quest/:id',
-  Quest: '/quest/',
+  DetailedQuest: '/detailed-quest/:id',
+  QuestWithoutId: '/detailed-quest/',
   Beginners: '/beginners',
   Reviews: '/reviews',
   Stock: '/stock',
-  Contacts: '/contacts-screen',
+  Contacts: '/contacts',
 };
 
 const ActionType = {

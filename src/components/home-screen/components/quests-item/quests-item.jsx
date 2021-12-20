@@ -10,7 +10,7 @@ function QuestsItem({ quest }) {
   const { id, previewImg, title, peopleCount, level } = quest;
   return (
     <S.QuestItem>
-      <S.QuestItemLink to={`${AppRoute.Quest}${id}`}>
+      <S.QuestItemLink to={`${AppRoute.QuestWithoutId}${id}`}>
         <S.Quest>
           <S.QuestImage
             src={previewImg}
